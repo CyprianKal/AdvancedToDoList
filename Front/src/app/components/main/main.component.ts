@@ -31,6 +31,19 @@ export class MainComponent implements OnInit {
       });
       this.sprawdz()
   }
+  
+  delAll(){
+    this.postService.deleteAll()
+      .subscribe(
+        response => {
+          console.log(response);
+          this.testGet();
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
   addPost(){
     
     const data = {

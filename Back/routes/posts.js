@@ -12,6 +12,14 @@ router.get('/', async (req,res) => {
     
 })
 
+router.delete('/', async (req, res) => {
+    try{
+    const removedPosts = await Post.remove();
+    res.json(removedPosts);}catch(err){
+        res.json({message: err})
+    }
+})
+
 router.post('/', async (req,res) => {
     const post = new Post({
         title: req.body.title,

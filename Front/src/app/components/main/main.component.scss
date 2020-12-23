@@ -1,3 +1,20 @@
+#bt{
+    flex:1;
+    background-color: rgb(94, 156, 94);
+    cursor: pointer;
+    transition-duration:200ms;
+    height: 26.87px;
+    border:0.5px solid black;
+    text-align: center !important;
+    line-height: 25px;
+    &:hover{
+        background-color: rgb(54, 190, 54);
+    }
+    &:active{
+        background-color: rgb(44, 247, 44);
+    }
+}
+
 .postView{
     display: flex;
     justify-content: space-between !important; 
@@ -39,32 +56,51 @@
         }
 }
 #postAdd{
-    display: flex;
+    display: flex !important;
     height: 25px;
-    width: 100% !important;
-        #title,#description{
+        #tyt,#opis{
             height: 25px;
-            flex:1;
-        }
-        input{
             text-align: center;
             border:0.5px solid black;
         }
-
-        #bt{
+        #tyt{
+            width: 80px;
+        }
+        #opis{
+            width: 155px;
+        }
+        #btt{
+            flex:1;
             background-color: rgb(94, 156, 94);
             cursor: pointer;
             transition-duration:200ms;
-            display:flex; 
             height: 26.87px;
+            width: 70px !important;
             border:0.5px solid black;
-            text-align: center;
+            text-align: center !important;
             line-height: 25px;
             &:hover{
                 background-color: rgb(54, 190, 54);
             }
             &:active{
                 background-color: rgb(44, 247, 44);
+            }
+   
+        }
+        #delButton{
+            width: 70px !important;
+            background-color: rgb(156, 94, 94);
+            cursor: pointer;
+            transition-duration:200ms;
+            height: 26.87px;
+            border:0.5px solid black;
+            text-align: center;
+            line-height: 25px;
+            &:hover{
+                background-color: rgb(190, 54, 54);
+            }
+            &:active{
+                background-color: rgb(247, 44, 44);
             }
         }
 
@@ -81,4 +117,5 @@
     overflow: hidden;
     border: 1px solid black;
     flex:1;
+
 }
