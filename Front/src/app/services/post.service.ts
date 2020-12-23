@@ -10,7 +10,7 @@ const baseUrl = 'http://localhost:3000/posts';
 export class PostService {
 
   constructor(private http: HttpClient) { }
-  
+
   deleteAll(){
     return this.http.delete(baseUrl);
   }
@@ -27,16 +27,16 @@ export class PostService {
   }
 
   update(id, data): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.patch(`${baseUrl}/${id}`, data);
   }
 
   delete(id): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-
-
   findByTitle(title): Observable<any> {
     return this.http.get(`${baseUrl}?title=${title}`);
   }
+
+
 }

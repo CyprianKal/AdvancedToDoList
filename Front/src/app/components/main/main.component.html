@@ -19,12 +19,12 @@
             placeholder="description"
             maxlength="20"
         />
-        <div (click)="addPost()" id="btt" >Add</div>
+        <div (click)="addEdit()" id="btt" >Add</div>
         <div (click)="delAll()" id="delButton">Delete All</div>
 
 
     </div>
-    <div *ngFor="let x of posts" class="postView">
+    <div *ngFor="let x of posts" class="postView" id="{{x._id}}" (click)="zaznacz(x._id)">
         <div id="title">{{x.title}}</div>
         <div id="description">{{x.description}}</div>
         <div (click)="usun(x._id)" id="bt">Delete</div>

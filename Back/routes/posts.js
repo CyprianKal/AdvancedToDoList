@@ -12,6 +12,19 @@ router.get('/', async (req,res) => {
     
 })
 
+router.patch('/:postId',async (req,res) => {
+    try{
+    const updatePost = await Post.update(
+        {_id: req.params.postId}, 
+        {$set : {title: req.body.title, description: req.body.description}}
+        
+        );
+    res.json(updatePost);
+}catch(err){
+        res.json({message:err})
+    }
+} )
+
 router.delete('/', async (req, res) => {
     try{
     const removedPosts = await Post.remove();
