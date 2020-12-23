@@ -1,0 +1,38 @@
+<div id="kontener">
+    <div id="postAdd">
+        <div style="display:flex; flex:1;">
+            <div style="flex:1;">
+               
+                <input
+                  type="text"
+                  id="title"
+                  required
+                  [(ngModel)]="tutorial.title"
+                  name="title"
+                  placeholder="title"
+                  maxlength="10"
+                />
+            </div>
+            <div style="flex:1;">
+                <input
+                  type="text"
+                  id="description"
+                  required
+                  [(ngModel)]="tutorial.description"
+                  name="description"
+                  placeholder="description"
+                  maxlength="20"
+                />
+            </div>
+        </div>
+        <div (click)="addPost()" id="bt">
+            Add
+        </div>
+
+    </div>
+    <div *ngFor="let x of posts" class="postView">
+        <div id="title">{{x.title}}</div>
+        <div id="description">{{x.description}}</div>
+        <div (click)="usun(x._id)" id="bt">Delete</div>
+    </div>
+</div>
